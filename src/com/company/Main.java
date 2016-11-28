@@ -29,8 +29,29 @@ public class Main {
         JOptionPane.showMessageDialog(null, displaystring);
     }
 
+
+    public static void del2() {
+        //sida 122, 5.7
+
+        //tror den inte fungerar
+        double x = 0;
+        double y = 0;
+        for(int i = 2; x!=0; i++) {
+            x = 1/i;
+             y = y + x;
+            if(y > 0.0001) {
+                i = 0;
+            }
+
+            System.out.print(y);
+        }
+
+    }
+
+
+
     public static void main(String[] args) {
-        del1();
+        del2();
 
     }
 }
