@@ -50,6 +50,47 @@ public class Main {
 
 
 
+public static void del3(){
+        // tar in ordet/namnet/charsen
+        String ordinput = JOptionPane.showInputDialog("Palindrom check (Only letter)");
+        // får ut hur långt ordet är samt tar bort en för att göra så den fungerar med charat ( den börjar på noll)
+        int ordlen = ordinput.length();
+        ordlen--;
+        //int för att kontrollera om den har gått igenom hela ordet utan problem
+        int janej = 2;
+        //chars
+        char c1, c2;
+        ordLoop:
+        // går igenom hela ordets längd
+        for(int i = 0; i < ordinput.length(); i++) {
+             //tar bokstaven @i
+            c1 = ordinput.charAt(i);
+            //Tar bokstaven @ ordlen.
+             c2 = ordinput.charAt(ordlen);
+
+            //kontrollerar om bokstaven från @ordlen är lika med bokstaven från @i
+            if (c2 == c1){
+                //tar bort en från ordlen så att den tar den nästa bokstaven.
+                ordlen--;
+
+
+            } else {
+                // Om den inte stämmer så blir kontroll inten en mindre
+                janej--;
+                //hoppar ur loopen.
+                break ordLoop;
+
+
+            }
+                //om kontroll variabeln är 2 så är ordet ett palindrom
+        }       if(janej == 2) {
+                     JOptionPane.showMessageDialog(null, "(" + ordinput + ") är ett palindrom.");
+                     //om kontroll variabeln inte är 2 så är det inte ett palindrom
+                }else{
+                     JOptionPane.showMessageDialog(null, "(" + ordinput + ") är inte ett palindrom.");
+                }
+
+}
 
 
 
@@ -58,7 +99,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        del2();
+        del3();
 
     }
 }
